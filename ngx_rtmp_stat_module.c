@@ -582,6 +582,8 @@ ngx_rtmp_stat_live(ngx_http_request_t *r, ngx_chain_t ***lll,
                             NGX_RTMP_STAT(bbuf, ngx_snprintf(bbuf, sizeof(bbuf),
                                           "%D", ctx->cs[1].timestamp -
                                           ctx->cs[0].timestamp) - bbuf);
+                        } else {
+                            NGX_RTMP_STAT_L("\"\"");
                         }
 
                         NGX_RTMP_STAT_L(",\"timestamp\":");
